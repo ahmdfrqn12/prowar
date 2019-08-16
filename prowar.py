@@ -77,13 +77,13 @@ Jaka = [me,kk1,kk2,kk3,kk4,kk5,jss]
 msg_dict = {}
 msg_dict1 = {}
 pro = {
-    "Pintu": [],
-    "Pembunuh": [],
-    "Maling": [],
-    "Penghasut": [],
-    "Pencuri": [],
-    "Penyelamat": [],
-    "Kuntilanak": []
+    "Pintu": True,
+    "Pembunuh": True,
+    "Maling": True,
+    "Penghasut": True,
+    "Pencuri": True,
+    "Penyelamat": True,
+    "Kuntilanak": True
 }
 respontags = {
     "Auto_text": "╔⪨⪩┅༐┅͜͡❇║нα∂ιя кυу║❇͜͡┅༐┅⪨⪩	    \n║✍círí círí σrαng kєѕєpíαn✍\n╠⪨⪩1 ѕukα tαg gα jєlαѕ\n╠⪨⪩2 ѕєlαlu cαrí pєrhαtíαn\n╠⪨⪩3 σrαng nчα nчєвєlín\n║  ﷽⪃⪄⫹⫺⫷⫸⫹⫺⪃⪄﷽\n╚⪨⪩┅༐┅͜͡❇║нα∂ιя кυу║❇͜͡┅༐┅⪨⪩",
@@ -498,7 +498,7 @@ def black(target):
         ["blacklist"].append(target)
 
 warKey = """╭━──────────────━╮
-│➢      xᴛᴄ ᴍᴇɴᴜ
+│➢      A.D TEAM
 ╰━──────────────━╯
 ╭━──────────────━╮
 │➢ ᴍᴀᴀғ [ᴅɪsᴘʟᴀʏɴᴀᴍᴇ]
@@ -520,7 +520,7 @@ warKey = """╭━──────────────━╮
 ╰━──────────────━╯
 ╭━──────────────━╮
 ├━────[Creator]───━
-│➢ https://line.me/ti/p/~denjaka-inexx
+│➢ https://line.me/ti/p/~ahmdfrqn_
 ╰━──────────────━╯"""
 def SqL_R(text):
     R_SQL = text.lower()
@@ -594,7 +594,7 @@ def serviceX(rank):
         if rank.type == 0:
             return
         if rank.type == 11:
-            if Rumahku in pro["Pintu"]:
+            if Rumahku in pro["Pintu"] == True:
                 try:
                     if kk1.getGroup(Rumahku).preventedJoinByTicket == False:
                         if Musuhku not in InexWars and Musuhku not in Owner and Musuhku not in meM:
@@ -657,7 +657,7 @@ def serviceX(rank):
                                     except:
                                         pass
         if rank.type == 19:
-            if Rumahku in pro["Pembunuh"]:
+            if Rumahku in pro["Pembunuh"] == True:
                 if Musuhku not in InexWars and Musuhku not in Owner and Musuhku not in meM:
                     InexBots["blacklist"][Musuhku] = True
                     random.choice(Jaka).kickoutFromGroup(Rumahku,[Musuhku])
@@ -666,7 +666,7 @@ def serviceX(rank):
 
         if rank.type == 19:
             try:
-                if Rumahku in pro["Kuntilanak"]:
+                if Rumahku in pro["Kuntilanak"] == True:
                     if Musuhku not in InexWars and Musuhku not in Owner and Musuhku not in meM:
                         G = me.getGroup(Rumahku)
                         G.preventedJoinByTicket = False
@@ -683,7 +683,7 @@ def serviceX(rank):
                 pass             
                 
         if rank.type == 19:
-            if Rumahku in pro["Penyelamat"]:
+            if Rumahku in pro["Penyelamat"] == True:
                 try:
                   if Temanku in meM:
                     if Musuhku not in InexWars and Musuhku not in Owner and Musuhku not in meM:
@@ -708,7 +708,7 @@ def serviceX(rank):
                 except:
                     pass
         if rank.type == 32:
-            if Rumahku in pro["Pencuri"]:
+            if Rumahku in pro["Pencuri"] == True:
                 if Musuhku not in InexWars and Musuhku not in Owner and Musuhku not in meM:
                     InexBots["blacklist"][Musuhku] = True
                     try:
@@ -733,7 +733,7 @@ def serviceX(rank):
                                     except:pass
                 return
         if rank.type == 13:
-            if Rumahku in pro["Penghasut"]:
+            if Rumahku in pro["Penghasut"] == True:
                 if Musuhku not in InexWars and Musuhku not in Owner and Musuhku not in meM:
                     InexBots["blacklist"][Musuhku] = True
                     try:
@@ -741,7 +741,7 @@ def serviceX(rank):
                             group = kk1.getGroup(Rumahku)
                             gMembMids = [contact.mid for contact in group.invitee]
                             for _mid in gMembMids:
-                                kk1.cancelGroupInvitation(Rumahku,[_mid])
+                                kk1.cancelGroupInvitation(Rumahku,[Temanku])
                                 kk1.kickoutFromGroup(Rumahku,[Musuhku])
                     except:
                         try:
@@ -749,7 +749,7 @@ def serviceX(rank):
                                 group = kk2.getGroup(Rumahku)
                                 gMembMids = [contact.mid for contact in group.invitee]
                                 for _mid in gMembMids:
-                                    kk2.cancelGroupInvitation(Rumahku,[_mid])
+                                    kk2.cancelGroupInvitation(Rumahku,[Temanku])
                                     kk2.kickoutFromGroup(Rumahku,[Musuhku])
                         except:
                             try:
@@ -757,7 +757,7 @@ def serviceX(rank):
                                     group = kk3.getGroup(Rumahku)
                                     gMembMids = [contact.mid for contact in group.invitee]
                                     for _mid in gMembMids:
-                                        kk3.cancelGroupInvitation(Rumahku,[_mid])
+                                        kk3.cancelGroupInvitation(Rumahku,[Temanku])
                                         kk3.kickoutFromGroup(Rumahku,[Musuhku])
                             except:
                                 try:
@@ -765,7 +765,7 @@ def serviceX(rank):
                                         group = kk4.getGroup(Rumahku)
                                         gMembMids = [contact.mid for contact in group.invitee]
                                         for _mid in gMembMids:
-                                            kk4.cancelGroupInvitation(Rumahku,[_mid])
+                                            kk4.cancelGroupInvitation(Rumahku,[Temanku])
                                             kk4.kickoutFromGroup(Rumahku,[Musuhku])
                                 except:
                                     try:
@@ -773,13 +773,13 @@ def serviceX(rank):
                                             group = kk5.getGroup(Rumahku)
                                             gMembMids = [contact.mid for contact in group.invitee]
                                             for _mid in gMembMids:
-                                                kk5.cancelGroupInvitation(Rumahku,[_mid])
+                                                kk5.cancelGroupInvitation(Rumahku,[Temanku])
                                                 kk5.kickoutFromGroup(Rumahku,[Musuhku])
                                     except:
                                         pass
 
         if rank.type == 17:
-            if Rumahku in pro["Maling"]:
+            if Rumahku in pro["Maling"] == True:
                 if Musuhku not in InexWars and Musuhku not in Owner and Musuhku not in meM:
                     InexBots["blacklist"][Musuhku] = True
                     try:
@@ -1904,7 +1904,7 @@ def serviceX(rank):
                                 ret_ += "\n┣═━━━Kode Qr/Link━━━═"
                                 ret_ += "\n┣═Group Ticket : {}".format(gTicket)
                                 ret_ += "\n┣═Group Qr : {}".format(gQr)
-                                ret_ += "\n╰━━━━══[ INEXBOT_TEAM]"
+                                ret_ += "\n╰━━━━══[ A.D TEAM_TEAM]"
                                 me.sendImageWithURL(Pesan, path)
                                 me.sendMessage(Pesan, str(ret_))
                         if InexBotsList == Menu["41"]:
